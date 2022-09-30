@@ -1,4 +1,4 @@
-# onyobot
+# LoggerBot
 bot that logs every message!
 
 # requirements (npm)
