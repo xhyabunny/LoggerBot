@@ -1,48 +1,49 @@
+//requirements (DO NOT TOUCH THESE)
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var config = require('./vars.json');
-
 const myLoggers = require('log4js');
 const { setInterval } = require('timers');
 const { S_IFREG } = require('constants');
 const { randomInt } = require('crypto');
+const logger = myLoggers.getLogger("bot");
 
+//token
+const token = config.TOKEN; // GO TO VARS.JSON FILE AND ADD YOUR TOKEN ( "token": "your token goes here" )
+
+//vars
+var p = ","; //this is the prefix
+var date = new Date().toLocaleString();
+var config = require('./vars.json');
+var index1 = ["avaiable", "dnd", "idle"]; //array with status
+var index0 = ["PLAYING", "WATCHING", "STREAMING", "LISTENING"]; //array with activity type
+
+//logger settings
 myLoggers.configure({
     appenders: { mylogger: { type:"file", filename: "./output.txt" } },
     categories: { default: { appenders:["mylogger"], level:"ALL" } }
 });
 
-const logger = myLoggers.getLogger("bot");
-const token = config.TOKEN; // GO TO VARS.JSON FILE AND ADD YOUR TOKEN
-const p = ",";
-
-var date=new Date(). toLocaleString();
-
-var index1 = ["avaiable", "dnd", "idle"];
-var index0 = ["PLAYING", "WATCHING", "STREAMING", "LISTENING"];
-
 client.on('ready', () => {
 
 setInterval((function(){
 
-        var index3 = index0[Math.floor(Math.random() * index0.length)];
-        var index2 = index1[Math.floor(Math.random() * index1.length)];
+        var index2 = index1[Math.floor(Math.random() * index1.length)]; //random status
+        var index3 = index0[Math.floor(Math.random() * index0.length)]; //random activity type
+
         client.user.setPresence({
-            status: index2,
+            status: index2,//    <<<< randomized status [index2]
             activity: {
                 name: 'your mom',
-                type: index3,
+                type: index3,//  <<<< randomized activity type [index3]
                 url: 'https://www.twitch.tv/ttv_bonndubz'
             }
         })
         
     }), 1000)
     
-  console.log(`Logged in as ${client.user.tag}!`);
+  console.log(`Logged in as ${client.user.tag}!`); //checks connection along with user tag in the prompt
     
 });
-
-
 
 client.on('message', message => {
     
