@@ -3,8 +3,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const myLoggers = require('log4js');
 const { setInterval } = require('timers');
-const { S_IFREG } = require('constants');
-const { randomInt } = require('crypto');
 const logger = myLoggers.getLogger("bot");
 
 //token
