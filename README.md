@@ -10,7 +10,7 @@ bot that logs every message!
 # issues
 
 ```diff
-- image/embeding will give errors
+- embeded messages will give errors
 # if you are having errors with non-existant references 
 # then you might add these two lines of code at the top:
 const { S_IFREG } = require('constants');
