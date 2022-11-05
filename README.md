@@ -1,5 +1,7 @@
 # LoggerBot
-bot that logs every message!
+bot that logs every message on a txt file!
+
+made by [@xhyabunny](https://github.com/xhyabunny)
 
 # requirements (npm)
 ```diff
