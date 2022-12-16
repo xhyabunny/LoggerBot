@@ -13,8 +13,5 @@ made by [@xhyabunny](https://github.com/xhyabunny)
 
 ```diff
 - embeded messages will give errors
-# if you are having errors with non-existant references 
-# then you might add these two lines of code at the top:
-const { S_IFREG } = require('constants');
-const { randomInt } = require('crypto');
+# report any bugs you see on issues
 ```
